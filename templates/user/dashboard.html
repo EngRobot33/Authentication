@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} | Dashboard{% endblock %}
+
+{% block content %}
+    <h1>Dashboard</h1>
+    <h3>
+        You have logged in as {{user.username | capfirst}}
+        <p>
+            <a href="{% url 'user:logout' %}">Logout</a>
+        </p>
+    </h3>
+{% endblock %}

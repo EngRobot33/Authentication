@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 
-{% block title %} | Register{% endblock %}
+{% block title %} | Login{% endblock %}
 
 {% block content %}
-    <h1>Register</h1>
+    <h1>Login</h1>
     <h3>
         <form method="POST">
             {% csrf_token %}
             {{form.as_p}}
             <p>
-                <input type="submit" value="Register">
+                <input type="submit" value="Login">
             </p>
             <p>
-                If you already have an account, <a href="{% url 'user:login' %}">login</a> instead.
+                Don't have an account? <a href="{% url 'user:register' %}">Create an account</a>.
             </p>
         </form>
     </h3>
