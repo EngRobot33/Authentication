@@ -11,6 +11,7 @@ def activate_user(modeladmin, request, queryset):
     modeladmin.message_user(request, '{} {} get activated'.format(rows_updated, subject))
 activate_user.short_description = 'Activate selected users'
 
+
 def deactivate_user(modeladmin, request, queryset):
     rows_updated = queryset.update(is_active=False)
     if rows_updated == 1:
@@ -20,11 +21,12 @@ def deactivate_user(modeladmin, request, queryset):
     modeladmin.message_user(request, '{} {} get deactivated'.format(rows_updated, subject))
 deactivate_user.short_description = 'Deactivate selected users'
 
+
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
     list_display = ('user', 'first_name_user', 'last_name_user', 'email_user', 'is_active')
     search_fields = ['user', 'first_name_user', 'last_name_user', 'email_user',]
-    actions = [activate_user, deactivate_user,]
+    actions = [activate_user, deactivate_user, ]
 
     def first_name_user(self, obj):
         if obj.user:

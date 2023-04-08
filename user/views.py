@@ -10,9 +10,11 @@ from .models import User
 def home(request):
     return render(request, 'user/home.html')
 
+
 @login_required
 def dashboard(request):
     return render(request, 'user/dashboard.html')
+
 
 def register(request):
     if request.method == 'POST':
@@ -29,6 +31,7 @@ def register(request):
         form = RegisterForm()
     
     return render(request, 'user/register.html', {'form': form})
+
 
 def login(request):
     if request.method == 'POST':
@@ -53,6 +56,7 @@ def login(request):
         form = LoginForm()
 
     return render(request, 'user/login.html', {'form': form})
+
 
 @login_required
 def logout(request):

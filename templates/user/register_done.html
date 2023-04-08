@@ -5,6 +5,6 @@
 {% block content %}
     <h1>Registration successful!</h1>
     <p>
-        Now you can <a href="#">login</a> to your account.
+        Now you can <a href="{% url 'user:login' %}">login</a> to your account.
     </p>
 {% endblock %}
